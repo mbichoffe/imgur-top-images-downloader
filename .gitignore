@@ -108,3 +108,5 @@ venv.bak/
 
 #app
 images/
+redis-stable.tar.gz
+redis-stable/
