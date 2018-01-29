@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import json
 import logging
 import os
 import requests
+from urllib.request import urlopen
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
