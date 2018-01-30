@@ -11,7 +11,7 @@ types = {'image/jpeg', 'image/png'}
 
 def get_links(client_id):
     headers = {'Authorization': 'Client-ID ' + client_id}
-    response = requests.get('https://api.imgur.com/3/gallery/random/random/', headers=headers)
+    response = requests.get('https://api.imgur.com/3/gallery/hot/', headers=headers)
     data = response.json()
     if response.ok:
         return [item['link'] for item in data['data'] if 'type' in item and item['type'] in types]
