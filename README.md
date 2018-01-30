@@ -56,7 +56,7 @@ Because downloading the images is an IO bound task, threading gives a large spee
 * `multiprocessing_func.py` - this script creates a multiprocessing Pool. With the map method it provides, we will pass the list of URLs to the pool, which in turn will spawn 8 new processes and use each one to download the images in parallel. The [official documentation](https://docs.python.org/2/library/multiprocessing.html) is quite easy to digest.
 Multiprocessing is a better choice if your code is CPU bound, and it is easier to implement. But the entire memory of the script is copied into each subprocess it spawns. It does not make a lot of difference for this use case, but it can become costly in larger applications.
 
-* `redis-queue.py` - Redis Queue is 'a simple Python library for queueing jobs and processing them in the background with workers.' 
+* `redis-queue.py` - Redis Queue is _'a simple Python library for queueing jobs and processing them in the background with workers.'_ 
 This is useful if you have long-running back-end tasks (a script that is executed periodically by a worker process) for web applications. You can have those tasks in another machine (or multiple machines).
 You first enqueue a function and its arguments using the library. This [pickles](https://docs.python.org/3.4/library/pickle.html) the function call representation, which is then appended to a Redis list. 
 Then at least one worker will need to be listening on that job queue for something to happen. 
@@ -73,7 +73,7 @@ To run this example (`redis-queue.py`), you will need to:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](license.md) file for details
 
 ## Acknowledgments
 
